@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Testimonials — Esteem Skin Clinic</title>
+  <meta name="description" content="Read what our clients say about their transformative experiences at Esteem Skin Clinic in Oklahoma City.">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@200;300;400;500&family=Great+Vibes&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <style>
+    /* Additional styles for testimonials page */
+    .testimonials-hero {
+      padding: 12rem 0 8rem;
+      text-align: center;
+      background: linear-gradient(135deg, #2C2C2C 0%, #1a1a1a 100%);
+      color: white;
+      position: relative;
+    }
+    
+    .testimonials-hero h1 {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      font-weight: 300;
+    }
+    
+    .testimonials-hero .lead {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 600px;
+      margin: 0 auto;
+      font-style: italic;
+    }
+    
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 3rem;
+      padding: 8rem 0;
+    }
+    
+    .testimonial-card {
+      background: white;
+      padding: 3rem;
+      border: 1px solid var(--stone);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+    
+    .testimonial-card p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--charcoal);
+      font-style: italic;
+      margin-bottom: 2rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+    }
+    
+    .testimonial-card footer {
+      color: var(--bronze);
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .treatment-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      color: var(--soft-grey);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-top: 1rem;
+      font-weight: 300;
+    }
+    
+    .featured-testimonial {
+      background: var(--cream);
+      padding: 6rem 0;
+      text-align: center;
+    }
+    
+    .featured-testimonial blockquote {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .featured-testimonial p {
+      font-size: 2rem;
+      line-height: 1.6;
+      color: var(--charcoal);
+      font-style: italic;
+      margin-bottom: 2rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+    }
+    
+    .featured-testimonial footer {
+      color: var(--bronze);
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    
+    .stats-section {
+      background: white;
+      padding: 6rem 0;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4rem;
+      text-align: center;
+    }
+    
+    .stat h3 {
+      font-size: 3.5rem;
+      color: var(--bronze);
+      margin-bottom: 0.5rem;
+      font-weight: 300;
+    }
+    
+    .stat p {
+      font-size: 0.9rem;
+      color: var(--soft-grey);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    @media (max-width: 968px) {
+      .testimonials-hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      
+      .featured-testimonial p {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+  
+  <meta name="theme-color" content="#2C2C2C">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-script">Esteem</span>
+        <span class="logo-sans">skin clinic</span>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="treatments.html">Treatments</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a class="btn-gold" href="#book">Book Consultation</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="testimonials-hero">
+      <div class="container">
+        <h1>Client Reflections</h1>
+        <p class="lead">Transformations that speak louder than words</p>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat">
+            <h3>20+</h3>
+            <p>Years of Excellence</p>
+          </div>
+          <div class="stat">
+            <h3>1000+</h3>
+            <p>Clients Transformed</p>
+          </div>
+          <div class="stat">
+            <h3>98%</h3>
+            <p>Satisfaction Rate</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Testimonial -->
+    <section class="featured-testimonial">
+      <div class="container">
+        <blockquote>
+          <p>"I've entrusted my skin to many over the years, but Esteem is in a category of its own. Mary's expertise is unmatched, the facility is serene, and the results are simply extraordinary. This isn't just skincare—it's an experience that transforms."</p>
+          <footer>— Catherine M., Oklahoma City</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- Testimonials Grid -->
+    <section style="background: var(--cream);">
+      <div class="container">
+        <div class="testimonials-grid">
+          
+          <article class="testimonial-card">
+            <p>"More than a treatment—it's a ritual I look forward to. My skin has never looked more luminous, and I leave feeling utterly rejuvenated every single time."</p>
+            <footer>— Elizabeth K.</footer>
+            <span class="treatment-tag">Signature Facial Client</span>
+          </article>
+
+          <article class="testimonial-card">
+            <p>"The attention to detail, the genuine care, the results—Esteem has completely transformed my approach to skincare. I can't imagine trusting anyone else with my skin."</p>
+            <footer>— Jennifer A.</footer>
+            <span class="treatment-tag">Anti-Aging Program</span>
+          </article>
+
+          <article class="testimonial-card">
+            <p>"As a cancer survivor, finding Mary was life-changing. Her expertise as a Certified Oncology Esthetician meant she understood my unique needs. She helped me feel beautiful again when I needed it most."</p>
+            <footer>— Sarah P.</footer>
+            <span class="treatment-tag">Oncology Skincare</span>
+          </article>
+
+          <article class="testimonial-card">
+            <p>"I struggled with acne for years and tried everything. Mary's approach finally gave me clear skin—and more importantly, my confidence back. I'm forever grateful."</p>
+            <footer>— Michael R.</footer>
+            <span class="treatment-tag">Acne Treatment</span>
+          </article>
+
+          <article class="testimonial-card">
+            <p>"The TORC body contouring exceeded my expectations. No surgery, no downtime, and real results. Mary explained everything thoroughly and made me feel completely comfortable."</p>
+            <footer>— Amanda T.</footer>
+            <span class="treatment-tag">Body Contouring</span>
+          </article>
+
+          <article class="testimonial-card">
+            <p>"Professional, luxurious, and results-driven. Mary really understands skin at a deep level. The clinic feels like a sanctuary—I always leave refreshed and renewed."</p>
+            <footer>— James T.</footer>
+            <span class="treatment-tag">Monthly Maintenance</span>
+          </article>
+
+          <article class="testimonial-card">
+            <p>"The Royal Cleo experience is worth every penny. Two hours of pure luxury and my skin looked 10 years younger immediately. Mary is an artist."</p>
+            <footer>— Patricia L.</footer>
+            <span class="treatment-tag">Royal Cleo Treatment</span>
+          </article>
+
+          <article class="testimonial-card">
+            <p>"I was nervous about trying Neveskin, but Mary put me completely at ease. The results have been incredible—my jawline is more defined and my skin is tighter. Natural and elegant."</p>
+            <footer>— Rebecca H.</footer>
+            <span class="treatment-tag">Neveskin Facial</span>
+          </article>
+
+          <article class="testimonial-card">
+            <p>"A calm sanctuary and outstanding treatments. Esteem is the best investment I've made in myself. I recommend Mary to everyone who will listen!"</p>
+            <footer>— S. Patel</footer>
+            <span class="treatment-tag">Regular Client</span>
+          </article>
+
+          <article class="testimonial-card">
+            <p>"Mary's knowledge of advanced skincare is impressive, but it's her warmth and genuine care that keeps me coming back. She truly listens and customizes everything to my needs."</p>
+            <footer>— Diana W.</footer>
+            <span class="treatment-tag">Personalized Treatments</span>
+          </article>
+
+          <article class="testimonial-card">
+            <p>"I drove from Tulsa for my appointments—that's how good Esteem is. The technologies they have are incredible, and Mary knows exactly how to use them for maximum results."</p>
+            <footer>— Mark J.</footer>
+            <span class="treatment-tag">Advanced Technology</span>
+          </article>
+
+          <article class="testimonial-card">
+            <p>"After years of sun damage, I didn't think my skin could recover. Mary proved me wrong. The improvement has been dramatic and I feel confident without makeup now."</p>
+            <footer>— Carol B.</footer>
+            <span class="treatment-tag">Sun Damage Treatment</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>Experience transformation for yourself</h2>
+        <p>Join hundreds of satisfied clients who have discovered radiant skin and renewed confidence at Esteem.</p>
+        <a class="btn btn-large btn-gold" href="#book">Book Your Consultation</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <a class="logo small" href="/">
+          <span class="logo-script">Esteem</span>
+          <span class="logo-sans">skin clinic</span>
+        </a>
+        <p class="tiny">12100 North May Avenue, Suite J1 · Oklahoma City, OK 73120</p>
+        <p class="tiny">By appointment · Monday–Friday 9am–6pm · Saturday 9am–2pm</p>
+      </div>
+
+      <div class="footer-right">
+        <nav class="footer-nav">
+          <a href="contact.html">Contact</a>
+          <a href="policies.html">Policies</a>
+          <a href="#">Privacy</a>
+        </nav>
+
+        <div class="socials">
+          <a href="#" aria-label="Instagram" class="social">IG</a>
+          <a href="#" aria-label="Facebook" class="social">FB</a>
+          <a href="mailto:esteem@cox.net" aria-label="Email" class="social">✉</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <div class="container">
+        <small>© <span id="year"></span> Esteem Skin Clinic — All rights reserved.</small>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>
