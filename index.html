@@ -3,32 +3,607 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Esteem Skin Clinic — Luxury Skincare in Oklahoma City</title>
-  <meta name="description" content="Transformative skincare curated for the discerning. Advanced technologies with an intimate, personalized approach in Oklahoma City.">
-  
-  <!-- Fonts -->
+  <title>Esteem Skin Clinic — Luxury Skincare</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@200;300;400;500&family=Great+Vibes&display=swap" rel="stylesheet">
-  
-  <!-- Styles -->
-  <link rel="stylesheet" href="css/styles.css">
-  
-  <!-- Meta / Theme colors -->
-  <meta name="theme-color" content="#2C2C2C">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --cream: #FAF7F2;
+      --stone: #E8E3D9;
+      --charcoal: #2C2C2C;
+      --bronze: #C9A961;
+      --gold: #D4AF37;
+      --soft-grey: #8B8B8B;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      color: var(--charcoal);
+      background: var(--cream);
+      line-height: 1.8;
+      letter-spacing: 0.3px;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 3rem;
+    }
+
+    /* HEADER */
+    .site-header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(250, 247, 242, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(184, 149, 106, 0.15);
+      z-index: 100;
+      padding: 1.5rem 0;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .logo-script {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.2rem;
+      font-weight: 400;
+      color: var(--charcoal);
+      line-height: 1;
+    }
+
+    .logo-sans {
+      font-size: 0.65rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--bronze);
+      font-weight: 400;
+      margin-left: 2px;
+    }
+
+    .main-nav ul {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      color: var(--charcoal);
+      font-size: 0.85rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 300;
+      transition: color 0.3s;
+    }
+
+    .main-nav a:hover {
+      color: var(--bronze);
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #D4AF37 0%, #C9A961 50%, #D4AF37 100%);
+      color: white;
+      padding: 0.6rem 1.8rem;
+      border-radius: 0;
+      font-weight: 400;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-gold::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.3) 50%,
+        transparent 70%
+      );
+      transform: rotate(45deg);
+      animation: shine 3s infinite;
+    }
+
+    @keyframes shine {
+      0% {
+        left: -50%;
+      }
+      100% {
+        left: 150%;
+      }
+    }
+
+    .btn-gold:hover {
+      background: linear-gradient(135deg, #E5C158 0%, #D4AF37 50%, #E5C158 100%);
+      color: white;
+      box-shadow: 0 8px 20px rgba(201, 169, 97, 0.4);
+    }
+
+    .nav-toggle {
+      display: none;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #FAF7F2 0%, #E8E3D9 100%);
+      padding-top: 8rem;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=1200') center/cover;
+      opacity: 0.08;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-copy h1 {
+      font-size: 4.5rem;
+      line-height: 1.1;
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+
+    .accent {
+      font-style: italic;
+      color: var(--bronze);
+      font-weight: 400;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: var(--soft-grey);
+      margin-bottom: 3rem;
+      max-width: 500px;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 1rem 2.5rem;
+      border-radius: 0;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: all 0.4s;
+      border: 1px solid transparent;
+      font-weight: 400;
+    }
+
+    .btn-primary {
+      background: var(--charcoal);
+      color: white;
+      border-color: var(--charcoal);
+    }
+
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--charcoal);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--charcoal);
+      border-color: var(--charcoal);
+    }
+
+    .btn-outline:hover {
+      background: var(--charcoal);
+      color: white;
+    }
+
+    .hero-card {
+      background: white;
+      padding: 3rem;
+      border: 1px solid var(--stone);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+    }
+
+    .card-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--bronze);
+    }
+
+    .card-text {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      color: var(--soft-grey);
+    }
+
+    .btn-small {
+      padding: 0.8rem 2rem;
+      font-size: 0.75rem;
+    }
+
+    /* SECTION */
+    .section {
+      padding: 8rem 0;
+    }
+
+    .section-title {
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      font-weight: 300;
+    }
+
+    .section-sub {
+      text-align: center;
+      color: var(--soft-grey);
+      margin-bottom: 5rem;
+      font-size: 1rem;
+    }
+
+    /* TREATMENTS */
+    .treatments-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+    }
+
+    .treatment {
+      background: white;
+      overflow: hidden;
+      border: 1px solid var(--stone);
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .treatment:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+    }
+
+    .treatment-media {
+      height: 280px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .treatment h3 {
+      font-size: 1.8rem;
+      padding: 2rem 2rem 1rem;
+      color: var(--charcoal);
+    }
+
+    .treatment p {
+      padding: 0 2rem;
+      color: var(--soft-grey);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .link-more {
+      padding: 0 2rem 2rem;
+      display: block;
+      color: var(--bronze);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+
+    .link-more:hover {
+      color: var(--gold);
+    }
+
+    /* APPOINTMENT CTA */
+    .appointment-cta {
+      background: var(--charcoal);
+      color: white;
+      padding: 6rem 0;
+    }
+
+    .cta-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .cta-inner h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-weight: 300;
+    }
+
+    .cta-inner p {
+      color: rgba(255,255,255,0.8);
+      font-size: 1rem;
+      max-width: 500px;
+    }
+
+    .btn-large {
+      padding: 1.2rem 3rem;
+      font-size: 0.9rem;
+    }
+
+    /* TESTIMONIALS */
+    .dark {
+      background: linear-gradient(135deg, #2C2C2C 0%, #1a1a1a 100%);
+      color: white;
+    }
+
+    .dark .section-title {
+      color: white;
+    }
+
+    .dark .section-sub {
+      color: rgba(255,255,255,0.7);
+    }
+
+    .testimonials {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      min-height: 200px;
+    }
+
+    .testimonial {
+      position: absolute;
+      width: 100%;
+      opacity: 0;
+      transition: opacity 0.6s;
+      text-align: center;
+    }
+
+    .testimonial.active {
+      opacity: 1;
+      position: relative;
+    }
+
+    .testimonial p {
+      font-size: 1.5rem;
+      font-style: italic;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.95);
+      margin-bottom: 2rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+    }
+
+    .testimonial footer {
+      color: var(--bronze);
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* ABOUT */
+    .about {
+      background: white;
+    }
+
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .about-copy h2 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+
+    .about-copy p {
+      font-size: 1rem;
+      line-height: 1.9;
+      color: var(--soft-grey);
+      margin-bottom: 2rem;
+    }
+
+    .about-values {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    .value {
+      padding-left: 2rem;
+      border-left: 2px solid var(--bronze);
+    }
+
+    .value h4 {
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+      color: var(--charcoal);
+    }
+
+    .value p {
+      color: var(--soft-grey);
+      font-size: 0.95rem;
+    }
+
+    /* FOOTER */
+    .site-footer {
+      background: var(--charcoal);
+      color: rgba(255,255,255,0.7);
+      padding: 4rem 0 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .logo.small .logo-script {
+      font-size: 2.5rem;
+      color: white;
+    }
+
+    .logo.small .logo-sans {
+      color: var(--bronze);
+    }
+
+    .tiny {
+      font-size: 0.85rem;
+      margin-top: 1rem;
+      opacity: 0.7;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-nav a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+
+    .footer-nav a:hover {
+      color: var(--bronze);
+    }
+
+    .socials {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .social {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.3s;
+    }
+
+    .social:hover {
+      color: var(--bronze);
+    }
+
+    .footer-bar {
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    .footer-bar small {
+      font-size: 0.75rem;
+      opacity: 0.5;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 968px) {
+      .container {
+        padding: 0 2rem;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy h1 {
+        font-size: 3rem;
+      }
+
+      .treatments-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .main-nav {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+
+      .bar {
+        display: block;
+        width: 25px;
+        height: 2px;
+        background: var(--charcoal);
+        margin: 5px 0;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="logo" href="/">
+      <a class="logo" href="#">
         <span class="logo-script">Esteem</span>
         <span class="logo-sans">skin clinic</span>
       </a>
 
       <nav class="main-nav" id="main-nav" aria-label="Primary">
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="treatments.html">Treatments</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#treatments">Treatments</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
           <li><a class="btn-gold" href="#book">Book Consultation</a></li>
         </ul>
       </nav>
@@ -42,7 +617,6 @@
   </header>
 
   <main>
-    <!-- HERO -->
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-copy">
@@ -64,7 +638,6 @@
       </div>
     </section>
 
-    <!-- TREATMENTS -->
     <section id="treatments" class="section">
       <div class="container">
         <h2 class="section-title">Signature Treatments</h2>
@@ -92,7 +665,6 @@
       </div>
     </section>
 
-    <!-- APPOINTMENT CTA -->
     <section id="book" class="appointment-cta">
       <div class="container cta-inner">
         <div>
@@ -105,7 +677,6 @@
       </div>
     </section>
 
-    <!-- TESTIMONIALS -->
     <section id="testimonials" class="section dark">
       <div class="container">
         <h2 class="section-title">Client Reflections</h2>
@@ -129,7 +700,6 @@
       </div>
     </section>
 
-    <!-- ABOUT / FOOTER CTA -->
     <section id="about" class="section about">
       <div class="container about-inner">
         <div class="about-copy">
@@ -159,7 +729,7 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-left">
-        <a class="logo small" href="/">
+        <a class="logo small" href="#">
           <span class="logo-script">Esteem</span>
           <span class="logo-sans">skin clinic</span>
         </a>
@@ -184,12 +754,21 @@
 
     <div class="footer-bar">
       <div class="container">
-        <small>© <span id="year"></span> Esteem Skin Clinic — All rights reserved.</small>
+        <small>© 2024 Esteem Skin Clinic — All rights reserved.</small>
       </div>
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="js/scripts.js"></script>
+  <script>
+    // Testimonial rotation
+    let currentTestimonial = 0;
+    const testimonials = document.querySelectorAll('.testimonial');
+    
+    setInterval(() => {
+      testimonials[currentTestimonial].classList.remove('active');
+      currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+      testimonials[currentTestimonial].classList.add('active');
+    }, 5000);
+  </script>
 </body>
 </html>
