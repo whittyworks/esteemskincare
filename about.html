@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Esteem Skin Clinic</title>
+  <meta name="description" content="Meet Mary Reed and discover the philosophy, technology, and intimate environment that define Esteem Skin Clinic in Oklahoma City.">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@200;300;400;500&family=Great+Vibes&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <style>
+    /* Additional styles specific to About page */
+    .about-nav {
+      background: white;
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--stone);
+      position: sticky;
+      top: 80px;
+      z-index: 50;
+    }
+    
+    .about-nav ul {
+      display: flex;
+      gap: 3rem;
+      list-style: none;
+      justify-content: center;
+    }
+    
+    .about-nav a {
+      text-decoration: none;
+      color: var(--soft-grey);
+      font-size: 0.85rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 300;
+      transition: color 0.3s;
+    }
+    
+    .about-nav a:hover,
+    .about-nav a.active {
+      color: var(--bronze);
+    }
+    
+    .mary-section {
+      padding: 8rem 0;
+      background: white;
+    }
+    
+    .mary-content {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 5rem;
+      align-items: start;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    
+    .mary-image {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: var(--stone);
+      border: 1px solid var(--stone);
+    }
+    
+    .mary-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .mary-text h2 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      font-weight: 300;
+    }
+    
+    .mary-title {
+      font-size: 0.9rem;
+      color: var(--bronze);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 2rem;
+      font-weight: 400;
+    }
+    
+    .mary-text p {
+      font-size: 1rem;
+      line-height: 1.9;
+      color: var(--soft-grey);
+      margin-bottom: 1.5rem;
+    }
+    
+    .certifications {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--stone);
+    }
+    
+    .certifications h4 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: var(--charcoal);
+    }
+    
+    .certifications p {
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+    
+    .facility-section {
+      padding: 8rem 0;
+      background: var(--cream);
+    }
+    
+    .facility-intro {
+      max-width: 800px;
+      margin: 0 auto 5rem;
+      text-align: center;
+    }
+    
+    .facility-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+    
+    .facility-image {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: var(--stone);
+      border: 1px solid var(--stone);
+    }
+    
+    .facility-features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+      margin-top: 5rem;
+    }
+    
+    .feature {
+      text-align: center;
+    }
+    
+    .feature h4 {
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+      color: var(--bronze);
+    }
+    
+    .feature p {
+      font-size: 0.95rem;
+      color: var(--soft-grey);
+      line-height: 1.7;
+    }
+    
+    .technology-section {
+      padding: 8rem 0;
+      background: white;
+    }
+    
+    .tech-item {
+      padding: 5rem 0;
+      border-bottom: 1px solid var(--stone);
+    }
+    
+    .tech-item:last-child {
+      border-bottom: none;
+    }
+    
+    .tech-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    
+    .tech-content.reverse {
+      direction: rtl;
+    }
+    
+    .tech-content.reverse > * {
+      direction: ltr;
+    }
+    
+    .tech-image {
+      width: 100%;
+      height: 400px;
+      background: var(--stone);
+      border: 1px solid var(--stone);
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .tech-text h3 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      font-weight: 300;
+    }
+    
+    .tech-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      color: var(--bronze);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
+    
+    .tech-text p {
+      font-size: 1rem;
+      line-height: 1.9;
+      color: var(--soft-grey);
+      margin-bottom: 1rem;
+    }
+    
+    .tech-text .ideal-for {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--bronze);
+      margin-top: 1.5rem;
+    }
+    
+    @media (max-width: 968px) {
+      .mary-content,
+      .tech-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      
+      .tech-content.reverse {
+        direction: ltr;
+      }
+      
+      .facility-grid,
+      .facility-features {
+        grid-template-columns: 1fr;
+      }
+      
+      .about-nav ul {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+  
+  <meta name="theme-color" content="#2C2C2C">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <span class="logo-script">Esteem</span>
+        <span class="logo-sans">skin clinic</span>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="treatments.html">Treatments</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a class="btn-gold" href="#book">Book Consultation</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>About Esteem</h1>
+      <p class="lead">Where expertise meets artistry, and every detail matters</p>
+    </div>
+  </section>
+
+  <!-- Quick Navigation -->
+  <nav class="about-nav">
+    <div class="container">
+      <ul>
+        <li><a href="#mary">Meet Mary</a></li>
+        <li><a href="#philosophy">Our Philosophy</a></li>
+        <li><a href="#facility">The Experience</a></li>
+        <li><a href="#technology">Our Technology</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <!-- MARY REED SECTION -->
+    <section id="mary" class="mary-section">
+      <div class="container">
+        <div class="mary-content">
+          <div class="mary-image">
+            <!-- Add Mary's photo here -->
+            <img src="images/mary-reed.jpg" alt="Mary Reed, Founder of Esteem Skin Clinic" />
+          </div>
+          
+          <div class="mary-text">
+            <h2>Mary Reed</h2>
+            <p class="mary-title">Founder & Lead Clinician · LE, COE, CDP</p>
+            
+            <p>Mary Reed didn't just create Esteem—she envisioned a sanctuary where clinical excellence meets genuine care, where every treatment is both transformative and deeply personal.</p>
+            
+            <p>As a Licensed Esthetician with over two decades of specialized training, Mary has devoted her career to mastering the art and science of skin health. Her expertise spans advanced modalities including microneedling, chemical peels, cryogenic treatments, IPL, and the exclusive technologies that define Esteem's approach.</p>
+            
+            <p>But Mary's journey is more than credentials. As a cancer survivor, she intimately understands the relationship between skin health and overall wellbeing. This experience led her to become a Certified Oncology Esthetician—a designation she holds with profound pride. Through this specialized training, Mary provides compassionate, expert care to clients navigating cancer treatment, adapting protocols to honor both medical needs and emotional resilience.</p>
+            
+            <p>Mary's philosophy is simple: every client deserves to feel seen, understood, and celebrated. She approaches each consultation as a collaboration, listening deeply to your concerns and aspirations before crafting a treatment plan that's uniquely yours. Her commitment to ongoing education ensures Esteem remains at the forefront of aesthetic innovation, offering you access to the most advanced, proven techniques available.</p>
+            
+            <div class="certifications">
+              <h4>Certifications & Specializations</h4>
+              <p>Certified Oncology Esthetician (COE) · DNA Certified Practitioner · DMK Paramedical Therapist · SkinPen & Royal Cleo Microneedling · IPL & Neveskin Technician · Ice & Wood Sculpting · Fascia Release & Lymphatic Drainage · Advanced Chemical Peels · Certified in Image Skincare, MBR, Neogenesis, and Edimi protocols</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHILOSOPHY SECTION -->
+    <section id="philosophy" class="section about">
+      <div class="container about-inner">
+        <div class="about-copy">
+          <h2>The Esteem Philosophy</h2>
+          <p>Founded on the belief that exceptional skincare requires both scientific rigor and artistic sensibility, Esteem represents the pinnacle of boutique aesthetic care in Oklahoma. We've curated the world's most sophisticated technologies—many exclusive to our clinic—and paired them with an unwavering commitment to personalized service.</p>
+          <p style="margin-top: 1.5rem;">Every treatment is a collaboration between our expert clinicians and you, thoughtfully designed to honor your skin's unique narrative while achieving your aesthetic vision. We don't follow trends—we deliver lasting transformation through evidence-based protocols and genuine care.</p>
+        </div>
+
+        <div class="about-values">
+          <div class="value">
+            <h4>Uncompromising Expertise</h4>
+            <p>Led by master clinicians with decades of specialized training in advanced aesthetic treatments.</p>
+          </div>
+          <div class="value">
+            <h4>Exclusive Technologies</h4>
+            <p>Home to Oklahoma's only TORC system and other European innovations unavailable elsewhere in the region.</p>
+          </div>
+          <div class="value">
+            <h4>Bespoke by Design</h4>
+            <p>No two treatments are alike. Every session is personally tailored to your skin's evolving needs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FACILITY SECTION -->
+    <section id="facility" class="facility-section">
+      <div class="container">
+        <h2 class="section-title">A Sanctuary for Transformation</h2>
+        
+        <div class="facility-intro">
+          <p style="font-size: 1.05rem; line-height: 1.9; color: var(--soft-grey);">Step into Esteem and leave the world behind. Our intimate, meticulously designed space in North Oklahoma City offers more than treatments—it offers an escape. Every detail has been considered: from the calming palette and soft lighting to the private treatment rooms where you can truly unwind.</p>
+        </div>
+        
+        <div class="facility-grid">
+          <div class="facility-image">
+            <!-- Add facility photos here -->
+          </div>
+          <div class="facility-image">
+            <!-- Add facility photos here -->
+          </div>
+          <div class="facility-image">
+            <!-- Add facility photos here -->
+          </div>
+          <div class="facility-image">
+            <!-- Add facility photos here -->
+          </div>
+        </div>
+        
+        <div class="facility-features">
+          <div class="feature">
+            <h4>Private Treatment Suites</h4>
+            <p>Intimate spaces equipped with advanced technology, designed for your comfort and privacy.</p>
+          </div>
+          <div class="feature">
+            <h4>Serene Atmosphere</h4>
+            <p>Calming interiors with thoughtful lighting create an environment where stress dissolves.</p>
+          </div>
+          <div class="feature">
+            <h4>Curated Retail</h4>
+            <p>Access to premium skincare lines personally selected and used by our clinicians.</p>
+          </div>
+          <div class="feature">
+            <h4>Personalized Care</h4>
+            <p>Complimentary amenities and attention to every detail of your experience.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNOLOGY SECTION -->
+    <section id="technology" class="technology-section">
+      <div class="container">
+        <h2 class="section-title">Technology That Transforms</h2>
+        <p class="section-sub" style="margin-bottom: 3rem;">We don't follow trends—we set standards. Our commitment to excellence means partnering with the world's most innovative aesthetic technologies.</p>
+        
+        <!-- Neveskin -->
+        <div class="tech-item">
+          <div class="tech-content">
+            <div class="tech-image" style="background-image: url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=1200')"></div>
+            <div class="tech-text">
+              <span class="tech-badge">Paris-Born Precision</span>
+              <h3>Neveskin</h3>
+              <p>Imported from France, Neveskin represents the pinnacle of non-invasive body and facial contouring. Using precisely controlled thermal technology, this treatment permanently reduces fat cells, smooths cellulite, and lifts facial contours—all without surgery, downtime, or discomfort.</p>
+              <p>Results are gradual, natural, and lasting. Each session works with your body's natural systems, which is why treatments are strategically scheduled for optimal transformation.</p>
+              <p class="ideal-for">Ideal for: Body sculpting, facial lifting, cellulite reduction</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- TORC -->
+        <div class="tech-item">
+          <div class="tech-content reverse">
+            <div class="tech-image" style="background-image: url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1200')"></div>
+            <div class="tech-text">
+              <span class="tech-badge">Exclusive to Oklahoma</span>
+              <h3>TORC Plus</h3>
+              <p>Esteem is the only clinic in Oklahoma offering TORC technology—an FDA-cleared system that builds lean muscle while you rest. Through targeted bio-electrical stimulation, TORC firms and tones abs, thighs, buttocks, and arms, complementing your fitness routine or jumpstarting your body transformation journey.</p>
+              <p>For the face, TORC microcurrent delivers our most sought-after anti-aging results: lifted contours, diminished fine lines, improved tone and texture. It's the non-surgical facelift that actually works.</p>
+              <p class="ideal-for">Ideal for: Muscle toning, body contouring, facial lifting, anti-aging</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Skin Plasma -->
+        <div class="tech-item">
+          <div class="tech-content">
+            <div class="tech-image" style="background-image: url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=1200')"></div>
+            <div class="tech-text">
+              <span class="tech-badge">Advanced Regeneration</span>
+              <h3>Skin Plasma</h3>
+              <p>This cutting-edge plasma technology works beneath the surface to stimulate collagen, sterilize acne-causing bacteria, and regenerate skin cells—all with zero downtime. Skin Plasma treats active acne, lifts sagging skin, and dramatically improves product absorption for amplified results.</p>
+              <p class="ideal-for">Ideal for: Acne treatment, collagen building, skin tightening</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Oxygen Dome -->
+        <div class="tech-item">
+          <div class="tech-content reverse">
+            <div class="tech-image" style="background-image: url('https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=1200')"></div>
+            <div class="tech-text">
+              <span class="tech-badge">Pure Infusion</span>
+              <h3>Oxygen Dome</h3>
+              <p>Experience the luxury of breathing pure oxygen while your skin drinks it in. The Oxygen Dome infuses negative ions and purified oxygen deep into tissue, boosting circulation, balancing pH, and maximizing the benefits of every product applied during your treatment.</p>
+              <p>The result? Luminous, revitalized skin and a profoundly relaxing experience that benefits your entire body.</p>
+              <p class="ideal-for">Ideal for: Enhancing facial treatments, deep hydration, relaxation</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>Experience the Esteem difference</h2>
+        <p>Begin with a complimentary consultation and discover what makes us Oklahoma's premier boutique skincare clinic.</p>
+        <a class="btn btn-large btn-gold" href="#book">Book Your Consultation</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <a class="logo small" href="/">
+          <span class="logo-script">Esteem</span>
+          <span class="logo-sans">skin clinic</span>
+        </a>
+        <p class="tiny">12100 North May Avenue, Suite J1 · Oklahoma City, OK 73120</p>
+        <p class="tiny">By appointment · Monday–Friday 9am–6pm · Saturday 9am–2pm</p>
+      </div>
+
+      <div class="footer-right">
+        <nav class="footer-nav">
+          <a href="contact.html">Contact</a>
+          <a href="policies.html">Policies</a>
+          <a href="#">Privacy</a>
+        </nav>
+
+        <div class="socials">
+          <a href="#" aria-label="Instagram" class="social">IG</a>
+          <a href="#" aria-label="Facebook" class="social">FB</a>
+          <a href="mailto:esteem@cox.net" aria-label="Email" class="social">✉</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <div class="container">
+        <small>© <span id="year"></span> Esteem Skin Clinic — All rights reserved.</small>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>
